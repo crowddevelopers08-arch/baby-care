@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import SupportFlowSection from "./SupportFlowSection";
 
 const needsRows = [
   [
@@ -26,7 +27,7 @@ const needsRows = [
 ];
 
 const allNeeds = needsRows.flat();
-const DEFAULT_VISIBLE_NEEDS = 6;
+const DEFAULT_VISIBLE_NEEDS = 9;
 
 const TitleUnderline = () => (
   <div className="mx-auto mt-1 flex items-center justify-center" aria-hidden="true">
@@ -83,6 +84,8 @@ export default function SpecialNeedsSection() {
             difficult. This is why the Babysits for Special Needs programme exists - for parents
             who are looking for the right attention and specialised care for their child.
           </p>
+
+          <SupportFlowSection />
 
           <div className="mt-10 max-sm:mt-5 rounded-[28px] border border-pink-100 bg-white/90 p-6 shadow-[0_20px_60px_rgba(227,55,98,0.08)] md:p-8">
             <h3

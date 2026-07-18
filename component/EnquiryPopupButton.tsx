@@ -1,6 +1,13 @@
 "use client";
 
-import { CSSProperties, FormEvent, ReactNode, useEffect, useState } from "react";
+import {
+  CSSProperties,
+  FormEvent,
+  ReactNode,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 
@@ -12,6 +19,8 @@ type EnquiryPopupButtonProps = {
   style?: CSSProperties;
 };
 
+const subscribeToHydration = () => () => {};
+
 export default function EnquiryPopupButton({
   ariaLabel,
   children,
@@ -19,15 +28,15 @@ export default function EnquiryPopupButton({
   onOpen,
   style,
 }: EnquiryPopupButtonProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const router = useRouter();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (!open) return;
