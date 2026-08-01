@@ -15,8 +15,8 @@ const ageGroups = [
     num: "01",
     title: "Newborn",
     subtitle: "0 – 3 Months",
-    from: "#4facfe",
-    to: "#1565c0",
+    from: "var(--color-azure)",
+    to: "var(--color-aqua)",
     offset: "lg:mt-0",
     image: "https://images.unsplash.com/photo-1552819289-e14fbbcea868?w=600&h=300&fit=crop&q=80",
     items: [
@@ -30,8 +30,8 @@ const ageGroups = [
     num: "02",
     title: "3 – 6 Months",
     subtitle: "Active Explorer",
-    from: "#11998e",
-    to: "#38ef7d",
+    from: "var(--color-aqua)",
+    to: "var(--color-leaf)",
     offset: "lg:mt-14",
     image: "https://images.unsplash.com/photo-1503284116362-30c49f508156?w=600&h=300&fit=crop&q=80",
     items: [
@@ -44,8 +44,8 @@ const ageGroups = [
     num: "03",
     title: "6 – 12 Months",
     subtitle: "Growing Curious",
-    from: "#f7971e",
-    to: "#e64a19",
+    from: "var(--color-sun)",
+    to: "var(--color-brand)",
     offset: "lg:mt-0",
     image: "https://images.unsplash.com/photo-1758698856229-6f3dfd08fcc7?w=600&h=300&fit=crop&q=80",
     items: [
@@ -60,8 +60,8 @@ const ageGroups = [
     num: "04",
     title: "Above 12 +",
     subtitle: "Little Learner",
-    from: "#f953c6",
-    to: "#b91d73",
+    from: "var(--color-brand)",
+    to: "var(--color-brand-soft)",
     offset: "lg:mt-14",
     image: "https://images.unsplash.com/photo-1578349035260-9f3d4042f1f7?w=600&h=300&fit=crop&q=80",
     items: [
@@ -80,18 +80,18 @@ export default function ResponsibilitiesSection() {
     <section id="what-we" className="relative w-full overflow-hidden bg-white py-8 md:py-14">
 
       {/* subtle decorative bg shapes — no shadow */}
-      <div className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full bg-pink-50 opacity-60" />
-      <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-blue-50 opacity-50" />
+      <div className="pointer-events-none absolute -left-32 -top-32 h-[500px] w-[500px] rounded-full bg-white opacity-60" />
+      <div className="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-mist opacity-50" />
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-12">
 
         {/* ── heading block ── */}
         <div className="mb-6 text-center">
-          <span className="mb-4 inline-block rounded-full bg-[#fff0f7] px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#e91e8c]">
+          <span className="mb-4 inline-block rounded-full bg-cream px-5 py-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
             What We Cover
           </span>
           <h2
-            className="font-black font-black leading-tight text-[#1a1f5e]"
+            className="font-black font-black leading-tight text-brand"
               style={{
                 fontSize: "clamp(1.8rem, 3.8vw, 2.9rem)",
                 fontFamily: "var(--font-nunito, Nunito, sans-serif)",
@@ -101,14 +101,14 @@ export default function ResponsibilitiesSection() {
           </h2>
           <div className="mx-auto mt-1 flex items-center justify-center gap-2">
              <svg width="112" height="14" viewBox="0 0 112 14" fill="none" className="block" aria-hidden="true">
-                <path d="M2 11 Q56 2 110 11" stroke="#e91e8c" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                <path d="M2 11 Q56 2 110 11" stroke="var(--color-brand)" strokeWidth="2.5" strokeLinecap="round" fill="none" />
               </svg>
           </div>
         </div>
 
         {/* ── description ── */}
         <p
-          className="mx-auto mb-6 max-w-3xl text-center leading-relaxed text-gray-500"
+          className="mx-auto mb-6 max-w-3xl text-center leading-relaxed text-muted"
           style={{ fontSize: "clamp(0.94rem, 1.4vw, 1.04rem)" }}
         >
           Needless to say, babies are needy. But when it comes to baby care, our services cover
@@ -119,14 +119,14 @@ export default function ResponsibilitiesSection() {
         </p>
 
         {/* ── note box ── */}
-        <div className="mx-auto mb-16 max-sm:mb-8 flex max-w-5xl items-start gap-4 rounded-2xl border border-[#fbbde8] bg-gradient-to-r from-[#fff5fb] to-[#fdf4ff] px-6 py-5">
-          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#e91e8c]">
+        <div className="mx-auto mb-16 max-sm:mb-8 flex max-w-5xl items-start gap-4 rounded-2xl border border-line bg-gradient-to-r from-white to-mist px-6 py-5">
+          <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
           </div>
-          <p className="text-gray-600" style={{ fontSize: "0.96rem" }}>
-            <span className="font-bold text-gray-800">Note: </span>
+          <p className="text-muted" style={{ fontSize: "0.96rem" }}>
+            <span className="font-bold text-ink">Note: </span>
             We also provide 1-month personal-habit training, in case there is any specific habit
             you want to inculcate in your child.
           </p>

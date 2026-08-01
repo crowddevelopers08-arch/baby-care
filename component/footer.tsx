@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import EnquiryPopupButton from "./EnquiryPopupButton";
 
 const scheduleItems = [
@@ -13,17 +14,17 @@ const scheduleItems = [
 ];
 
 const LocationIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-pink-500 mt-0.5 shrink-0">
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-cream mt-0.5 shrink-0">
     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
   </svg>
 );
 const PhoneIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-pink-500 shrink-0">
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-cream shrink-0">
     <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
   </svg>
 );
 const EmailIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-pink-500 shrink-0">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-cream shrink-0">
     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
     <polyline points="22,6 12,13 2,6" />
   </svg>
@@ -42,7 +43,7 @@ export default function BabyCareFooter() {
       {/* ───────────────── MAIN FOOTER ───────────────── */}
       <footer
         className="relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #fff0f5 0%, #fce4ec 40%, #f8f0ff 100%)" }}
+        style={{ background: "var(--color-azure)" }}
       >
         {/* Decorative background circle */}
         <div
@@ -50,7 +51,7 @@ export default function BabyCareFooter() {
           style={{
             width: "480px",
             height: "480px",
-            background: "radial-gradient(circle, rgba(255,182,193,0.18) 0%, rgba(255,240,245,0.05) 70%)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.00) 70%)",
           }}
         />
 
@@ -58,15 +59,26 @@ export default function BabyCareFooter() {
 
           {/* ── Col 1: Brand + Newsletter ── */}
           <div className="flex max-w-xs flex-col items-start gap-5 max-sm:gap-2">
-            <h2 className="text-3xl font-extrabold">
-              <span className="text-pink-500">Baby</span>
-              <span className="text-gray-800">Care</span>
-            </h2>
-            <p className="text-gray-500 text-sm leading-relaxed">
+            <div className="flex items-center gap-3">
+              {/* white chip — the logo is cyan/purple and would not read on azure */}
+              <span className="inline-flex items-center justify-center rounded-2xl bg-white p-2">
+                <Image
+                  src="/ss-logo.png"
+                  alt="SS Babysitter"
+                  width={72}
+                  height={48}
+                  className="h-11 w-auto"
+                />
+              </span>
+              <h2 className="text-2xl font-extrabold leading-none text-white sm:text-3xl">
+                SS Babysitter
+              </h2>
+            </div>
+            <p className="text-white/85 text-sm leading-relaxed">
               There cursus massa at urnaaculis estieSed aliquamellus vitae ultrs condmentum leo massamollis its estiegittis miristum.
             </p>
             <EnquiryPopupButton
-              className="inline-flex items-center justify-center rounded-full bg-[#e91e8c] px-7 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-white shadow-lg shadow-pink-200/70 transition-all hover:-translate-y-0.5 hover:opacity-95"
+              className="inline-flex items-center justify-center rounded-full bg-sun px-7 py-3.5 text-sm font-black uppercase tracking-[0.14em] text-white shadow-lg shadow-black/10 transition-all hover:-translate-y-0.5 hover:bg-aqua"
             >
               Enquire Now
             </EnquiryPopupButton>
@@ -75,15 +87,15 @@ export default function BabyCareFooter() {
           {/* ── Col 2: Schedule ── */}
           <div className="flex items-start justify-center">
             <div
-              className="border border-pink-300 rounded-3xl px-7 py-6 w-full max-w-xs"
-              style={{ background: "rgba(255,255,255,0.35)" }}
+              className="border border-white/40 rounded-3xl px-7 py-6 w-full max-w-xs"
+              style={{ background: "rgba(255,255,255,0.14)" }}
             >
-                <h3 className="text-pink-500 font-extrabold text-lg tracking-wide uppercase border-b-2 border-pink-400 pb-1 w-fit">Our Hours</h3>
+                <h3 className="text-white font-extrabold text-lg tracking-wide uppercase border-b-2 border-cream pb-1 w-fit">Our Hours</h3>
               {scheduleItems.map((item) => (
-                <div key={item.day} className="py-1 border-b border-pink-100 last:border-0">
-                  <span className="text-gray-700 text-sm">
+                <div key={item.day} className="py-1 border-b border-white/25 last:border-0">
+                  <span className="text-white/90 text-sm">
                     <span className="font-medium">{item.day}:</span>{" "}
-                    <span className={item.closed ? "text-red-400" : ""}>{item.time}</span>
+                    <span className={item.closed ? "text-cream font-semibold" : ""}>{item.time}</span>
                   </span>
                 </div>
               ))}
@@ -92,31 +104,31 @@ export default function BabyCareFooter() {
 
           {/* ── Col 3: Location ── */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-pink-500 font-extrabold text-lg tracking-wide uppercase border-b-2 border-pink-400 pb-1 w-fit">
+            <h3 className="text-white font-extrabold text-lg tracking-wide uppercase border-b-2 border-cream pb-1 w-fit">
               Location
             </h3>
             <ul className="flex flex-col gap-3 mt-1">
               <li className="flex items-start gap-3">
                 <LocationIcon />
-                <span className="text-gray-600 text-sm">No: 10, 1st floor, Swamy Nagar, Urapakkam ( above SBI bank) Chennai -603211</span>
+                <span className="text-white/90 text-sm">No: 10, 1st floor, Swamy Nagar, Urapakkam ( above SBI bank) Chennai -603211</span>
               </li>
               <li className="flex items-center gap-3">
                 <PhoneIcon />
-                <span className="text-gray-600 text-sm">+91 9884502033</span>
+                <span className="text-white/90 text-sm">+91 9884502033</span>
               </li>
               <li className="flex items-center gap-3">
                 <EmailIcon />
-                <span className="text-gray-600 text-sm">rsaravanakumar02@gmail.com</span>
+                <span className="text-white/90 text-sm">rsaravanakumar02@gmail.com</span>
               </li>
             </ul>
           </div>
 
           {/* Col 4: Map */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-pink-500 font-extrabold text-lg tracking-wide uppercase border-b-2 border-pink-400 pb-1 w-fit">
+            <h3 className="text-white font-extrabold text-lg tracking-wide uppercase border-b-2 border-cream pb-1 w-fit">
               Find Us
             </h3>
-            <div className="mt-1 overflow-hidden rounded-3xl border border-pink-200 bg-white/50 p-2 shadow-[0_14px_35px_rgba(233,30,140,0.10)]">
+            <div className="mt-1 overflow-hidden rounded-3xl border border-white/40 bg-white/15 p-2 shadow-[0_14px_35px_rgba(0,0,0,0.12)]">
               <iframe
                 title="BabyCare location map"
                 src="https://www.google.com/maps?q=No%2010%201st%20floor%20Swamy%20Nagar%20Urapakkam%20Chennai%20603211&output=embed"
@@ -129,7 +141,7 @@ export default function BabyCareFooter() {
               href="https://www.google.com/maps/search/?api=1&query=No%2010%201st%20floor%20Swamy%20Nagar%20Urapakkam%20Chennai%20603211"
               target="_blank"
               rel="noreferrer"
-              className="text-sm font-bold text-pink-500 hover:text-pink-600"
+              className="text-sm font-bold text-white hover:text-cream"
             >
               Open in Google Maps
             </a>
@@ -138,19 +150,19 @@ export default function BabyCareFooter() {
       </footer>
 
       {/* ───────────────── BOTTOM BAR ───────────────── */}
-      <div className="bg-slate-800 text-gray-300 text-sm px-6 py-4 flex flex-col sm:flex-row items-center justify-around gap-2 relative max-sm:mb-12">
+      <div className="bg-sun text-white text-sm px-6 py-4 flex flex-col sm:flex-row items-center justify-around gap-2 relative max-sm:mb-12">
         <p>
-          <span className="text-pink-400 font-semibold">©</span>{" "}
-          <span className="text-pink-400 font-semibold">BabyCare</span>, All right reserved.
+          <span className="text-white font-semibold">©</span>{" "}
+          <span className="text-white font-semibold">BabyCare</span>, All right reserved.
         </p>
         <p>
-          <a href="/privacy-policy" className="cursor-pointer text-pink-400 font-semibold hover:underline">Privacy Policy</a>
+          <a href="/privacy-policy" className="cursor-pointer text-white font-semibold hover:underline">Privacy Policy</a>
         </p>
 
         {/* Scroll-to-top button */}
         <button
           onClick={scrollToTop}
-          className="fixed bottom-20 right-6 w-11 h-11 cursor-pointer rounded-full bg-pink-500 hover:bg-pink-600 transition-colors text-white flex items-center justify-center shadow-lg md:bottom-6"
+          className="fixed bottom-20 right-6 w-11 h-11 cursor-pointer rounded-full bg-brand hover:bg-aqua transition-colors text-white flex items-center justify-center shadow-lg md:bottom-6"
           aria-label="Scroll to top"
         >
           <ArrowUpIcon />
@@ -158,10 +170,10 @@ export default function BabyCareFooter() {
       </div>
 
       {/* Mobile fixed buttons */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 flex w-full overflow-hidden rounded-t-xl border-t border-pink-200 backdrop-blur-sm md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-50 flex w-full overflow-hidden rounded-t-xl border-t border-line backdrop-blur-sm md:hidden">
         <a
           href="tel:+919884502033"
-          className="flex flex-1 items-center justify-center gap-2 bg-[#e91e8c] py-4 text-base font-bold text-white transition-all duration-300 hover:bg-[#d7187f] active:translate-y-px"
+          className="flex flex-1 items-center justify-center gap-2 bg-leaf py-4 text-base font-bold text-white transition-all duration-300 hover:bg-aqua active:translate-y-px"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
             <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
@@ -170,7 +182,7 @@ export default function BabyCareFooter() {
         </a>
 
         <EnquiryPopupButton
-          className="flex flex-1 items-center justify-center gap-2 bg-[#1a1f5e] py-4 text-base font-bold text-white transition-all duration-300 hover:bg-[#262d7a] active:translate-y-px"
+          className="flex flex-1 items-center justify-center gap-2 bg-sun py-4 text-base font-bold text-white transition-all duration-300 hover:bg-aqua active:translate-y-px"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z" />

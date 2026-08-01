@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
+/*
+ * Palette — sourced from ssbabysitter.com
+ * Every colour below is taken verbatim from the live site's Elementor
+ * global kit (post-117) + page/header/footer stylesheets.
+ *
+ * How the source site applies them:
+ *   surfaces  white base; sections alternate with solid azure / aqua /
+ *             sun / brand blocks that carry white text
+ *   headings  brand (heading widget default), white on colour blocks
+ *   body      muted; secondary labels graphite
+ *   buttons   sun -> aqua on hover (kit default); azure for forms;
+ *             brand for primary CTAs; leaf for the call action
+ *   header    sun top strip over a white nav row
+ *   footer    azure body under a sun strip, white text
+ *   cream     hover wash only — never a section background
+ */
+@theme {
+  --color-brand: #db3056;       /* --e-global-color-primary   */
+  --color-brand-soft: #ea567b;  /* primary gradient partner   */
+  --color-azure: #30acdb;       /* --e-global-color-accent    */
+  --color-sun: #fb8b24;         /* kit button / header strip  */
+  --color-aqua: #17bebb;        /* kit button hover / stats   */
+  --color-leaf: #3cb92d;        /* call action                */
+  --color-ink: #2b2b2b;         /* kit h4                     */
+  --color-graphite: #54595f;    /* --e-global-color-secondary */
+  --color-muted: #7a7a7a;       /* --e-global-color-text      */
+  --color-cream: #f8eee5;       /* hover wash                 */
+  --color-line: #d8d8d8;        /* header rule                */
+  --color-mist: #f3f3f3;        /* neutral surface            */
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: var(--color-muted);
 }
 
 @theme inline {

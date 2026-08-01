@@ -9,13 +9,15 @@ interface Stat {
   icon: string;
 }
 
+const statAccents = ["var(--color-brand)", "var(--color-azure)", "var(--color-aqua)"];
+
 const stats: Stat[] = [
   { target: 7,     suffix: "+",  label: "Happy Parents",          icon: "" },
   { target: 1680,  suffix: "+",  label: "Registered Babysitters", icon: "" },
   { target: 12000, suffix: "+",  label: "Happy Kids",             icon: "" },
 ];
 
-function CountUp({ target, duration = 2000 }: { target: number; duration?: number }) {
+export function CountUp({ target, duration = 2000 }: { target: number; duration?: number }) {
   const [count, setCount] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -52,7 +54,7 @@ function CountUp({ target, duration = 2000 }: { target: number; duration?: numbe
 export default function StatsSection() {
   return (
     <section className="w-full bg-white px-4 md:hidden">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 gap-0 divide-y divide-pink-100">
+      <div className="max-w-5xl mx-auto grid grid-cols-2 gap-0 divide-y divide-mist">
         {stats.map(({ target, suffix, label, icon }, i) => (
           <div
             key={i}
@@ -70,7 +72,7 @@ export default function StatsSection() {
               className="font-black leading-none"
               style={{
                 fontSize: "clamp(1.75rem, 8vw, 2.25rem)",
-                color: "#e91e8c",
+                color: statAccents[i % statAccents.length],
                 fontFamily: "var(--font-nunito), Nunito, sans-serif",
               }}
             >
@@ -80,7 +82,7 @@ export default function StatsSection() {
 
             {/* Label */}
             <p
-              className="text-center text-xs font-medium uppercase tracking-wide text-gray-500"
+              className="text-center text-xs font-medium uppercase tracking-wide text-graphite"
             >
               {label}
             </p>

@@ -8,6 +8,7 @@ import BookingSection from "@/component/BookingSection";
 import TestimonialsSection from "@/component/TestimonialsSection";
 import BabyCareFooter from "@/component/footer";
 import SupportFlowSection from "@/component/SupportFlowSection";
+import ChennaiPresenceSection from "@/component/ChennaiPresenceSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <StatsSection />
       <AboutSection />
+      <ChennaiPresenceSection />
       <SupportFlowSection />
       <ResponsibilitiesSection />
       <TestimonialsSection />

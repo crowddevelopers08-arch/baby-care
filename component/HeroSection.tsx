@@ -35,7 +35,7 @@ export default function HeroSection() {
 
           {/* Subheading — slides in from left */}
           <p
-            className="anim-fade-left text-[#e91e8c] mb-3"
+            className="anim-fade-left text-brand mb-3"
             style={
               {
                 "--delay": "0.1s",
@@ -85,7 +85,7 @@ export default function HeroSection() {
             <EnquiryPopupButton
               className="inline-block text-white font-semibold rounded-full transition-all hover:opacity-90 hover:scale-105"
               style={{
-                backgroundColor: "#e91e8c",
+                backgroundColor: "var(--color-sun)",
                 padding: "clamp(10px, 2vw, 16px) clamp(24px, 4vw, 36px)",
                 fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
               }}
@@ -95,7 +95,7 @@ export default function HeroSection() {
             <EnquiryPopupButton
               className="inline-block text-white font-semibold rounded-full transition-all hover:opacity-90 hover:scale-105"
               style={{
-                backgroundColor: "#e91e8c",
+                backgroundColor: "var(--color-azure)",
                 padding: "clamp(10px, 2vw, 16px) clamp(24px, 4vw, 36px)",
                 fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
               }}

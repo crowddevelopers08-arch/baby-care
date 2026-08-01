@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import EnquiryPopupButton from "./EnquiryPopupButton";
@@ -48,7 +49,7 @@ const LinkedInIcon = () => (
 );
 
 const PhoneIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" strokeWidth="1.8">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" strokeWidth="1.8">
     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.61 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.64a16 16 0 0 0 6.08 6.08l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
   </svg>
 );
@@ -73,7 +74,7 @@ const ChevronDownIcon = () => (
 );
 
 const HamburgerIcon = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" strokeWidth="2.2">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" strokeWidth="2.2">
     <line x1="3" y1="6" x2="21" y2="6" />
     <line x1="3" y1="12" x2="21" y2="12" />
     <line x1="3" y1="18" x2="21" y2="18" />
@@ -81,7 +82,7 @@ const HamburgerIcon = () => (
 );
 
 const CloseIcon = () => (
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#e91e8c" strokeWidth="2.2">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" strokeWidth="2.2">
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
@@ -105,11 +106,11 @@ export default function Navbar() {
   }
 
   return (
-    <header className="w-full bg-[#fff5f8]">
+    <header className="w-full bg-white">
 
       {/* ── Top Bar — hidden on mobile ── */}
       <div
-        className="hidden md:block bg-[#e91e8c] py-4 mx-20"
+        className="hidden md:block bg-sun py-4 mx-20"
         style={{ borderBottomLeftRadius: "70px", borderBottomRightRadius: "70px" }}
       >
         <div className="max-w-7xl mx-auto px-2 flex items-center justify-between">
@@ -138,7 +139,7 @@ export default function Navbar() {
                 href="#"
                 aria-label={label}
                 className="w-9 h-9 rounded-full flex items-center justify-center transition-opacity hover:opacity-80"
-                style={{ backgroundColor: "#1a1a6e" }}
+                style={{ backgroundColor: "var(--color-azure)" }}
               >
                 <Icon />
               </a>
@@ -148,17 +149,25 @@ export default function Navbar() {
       </div>
 
       {/* ── Main Navbar ── */}
-      <div className="bg-[#fff5f8] py-4">
+      <div className="bg-white border-b border-line py-4">
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-8">
 
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex flex-shrink-0 items-center gap-3">
+            <Image
+              src="/ss-logo.png"
+              alt="SS Babysitter"
+              width={72}
+              height={48}
+              priority
+              className="h-11 w-auto md:h-12"
+            />
             <span
-              className="text-3xl font-black leading-none"
+              className="text-2xl font-black leading-none md:text-3xl"
               style={{ fontFamily: "var(--font-nunito), Nunito, sans-serif" }}
             >
-              <span className="text-[#e91e8c]">Baby</span>
-              <span className="text-[#1a1a6e]">Care</span>
+              <span className="text-brand">SS </span>
+              <span className="text-ink">Babysitter</span>
             </span>
           </Link>
 
@@ -169,7 +178,7 @@ export default function Navbar() {
                 key={label}
                 href={href}
                 className={`text-[15px] font-medium transition-colors ${
-                  active ? "text-[#e91e8c]" : "text-gray-700 hover:text-[#e91e8c]"
+                  active ? "text-brand" : "text-muted hover:text-azure"
                 }`}
               >
                 {label}
@@ -184,21 +193,21 @@ export default function Navbar() {
                 <PhoneIcon />
                 <div
                   className="absolute -top-1.5 -right-2 w-5 h-5 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#e91e8c" }}
+                  style={{ backgroundColor: "var(--color-brand)" }}
                 >
                   <ChatIcon />
                 </div>
               </div>
               <div className="leading-tight">
-                <p className="text-[#e91e8c] text-[13px] font-medium">Have any questions?</p>
-                <p className="text-gray-800 text-[13px] font-semibold">Free: +91 9884502033</p>
+                <p className="text-brand text-[13px] font-medium">Have any questions?</p>
+                <p className="text-ink text-[13px] font-semibold">Free: +91 9884502033</p>
               </div>
             </div>
-            <div className="w-px h-10 bg-gray-300" />
+            <div className="w-px h-10 bg-mist" />
             <EnquiryPopupButton
               ariaLabel="Open enquiry form"
               className="w-11 h-11 rounded-full flex items-center justify-center transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#e91e8c" }}
+              style={{ backgroundColor: "var(--color-brand)" }}
             >
               <SearchIcon />
             </EnquiryPopupButton>
@@ -218,26 +227,26 @@ export default function Navbar() {
 
       {/* ── Mobile Dropdown Menu ── */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-pink-100 shadow-lg">
+        <div className="md:hidden bg-white border-t border-mist shadow-lg">
           <nav className="flex flex-col px-6 py-4 gap-1">
             {navLinks.map(({ label, href, active }) => (
               <Link
                 key={label}
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className={`py-3 text-[15px] font-medium border-b border-gray-100 transition-colors ${
-                  active ? "text-[#e91e8c]" : "text-gray-700 hover:text-[#e91e8c]"
+                className={`py-3 text-[15px] font-medium border-b border-mist transition-colors ${
+                  active ? "text-brand" : "text-muted hover:text-azure"
                 }`}
               >
                 {label}
               </Link>
             ))}
-            <span className="py-3 text-[15px] font-medium text-gray-700 border-b border-gray-100 flex items-center gap-1 cursor-pointer">
+            <span className="py-3 text-[15px] font-medium text-muted border-b border-mist flex items-center gap-1 cursor-pointer">
               Pages <ChevronDownIcon />
             </span>
             <EnquiryPopupButton
               onOpen={() => setMenuOpen(false)}
-              className="py-3 text-[15px] font-medium text-gray-700 hover:text-[#e91e8c] border-b border-gray-100"
+              className="py-3 text-[15px] font-medium text-muted hover:text-azure border-b border-mist"
             >
               Contact
             </EnquiryPopupButton>
@@ -247,14 +256,14 @@ export default function Navbar() {
                 <PhoneIcon />
                 <div
                   className="absolute -top-1.5 -right-2 w-5 h-5 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "#e91e8c" }}
+                  style={{ backgroundColor: "var(--color-brand)" }}
                 >
                   <ChatIcon />
                 </div>
               </div>
               <div className="leading-tight">
-                <p className="text-[#e91e8c] text-[13px] font-medium">Have any questions?</p>
-                <p className="text-gray-800 text-[13px] font-semibold">Free:+91 9884502033</p>
+                <p className="text-brand text-[13px] font-medium">Have any questions?</p>
+                <p className="text-ink text-[13px] font-semibold">Free:+91 9884502033</p>
               </div>
             </div>
           </nav>
