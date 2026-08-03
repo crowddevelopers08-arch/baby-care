@@ -85,3 +85,42 @@ button:disabled {
   animation: fadeInLeft 0.7s ease-out forwards;
   animation-delay: var(--delay, 0s);
 }
+
+/* ── Logo cross-fade ──
+ * The SS lockup and the Pinkfinger wordmark share one 9s loop; the second
+ * layer runs the same keyframes shifted half a cycle, so exactly one of the
+ * two is on screen at a time.
+ */
+@keyframes logoSwap {
+  0%, 44%  { opacity: 1; transform: translateY(0); }
+  50%, 94% { opacity: 0; transform: translateY(-7px); }
+  100%     { opacity: 1; transform: translateY(0); }
+}
+
+.logo-swap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.logo-swap__layer {
+  animation: logoSwap 9s ease-in-out infinite;
+}
+
+.logo-swap__primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-swap__secondary {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  animation-delay: -4.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-swap__layer { animation: none; }
+  .logo-swap__secondary { opacity: 0; }
+}

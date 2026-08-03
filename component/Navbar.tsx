@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import EnquiryPopupButton from "./EnquiryPopupButton";
+import LogoSwap from "./LogoSwap";
 import SimpleNavbar from "./SimpleNavbar";
 
 const LocationIcon = () => (
@@ -153,22 +154,24 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between gap-8">
 
           {/* Logo */}
-          <Link href="/" className="flex flex-shrink-0 items-center gap-3">
-            <Image
-              src="/ss-logo.png"
-              alt="SS Babysitter"
-              width={72}
-              height={48}
-              priority
-              className="h-11 w-auto md:h-12"
-            />
-            <span
-              className="text-2xl font-black leading-none md:text-3xl"
-              style={{ fontFamily: "var(--font-nunito), Nunito, sans-serif" }}
-            >
-              <span className="text-brand">SS </span>
-              <span className="text-ink">Babysitter</span>
-            </span>
+          <Link href="/" className="flex flex-shrink-0 items-center">
+            <LogoSwap>
+              <Image
+                src="/ss-logo.png"
+                alt="SS Babysitter"
+                width={72}
+                height={48}
+                priority
+                className="h-11 w-auto md:h-12"
+              />
+              <span
+                className="text-2xl font-black leading-none md:text-3xl"
+                style={{ fontFamily: "var(--font-nunito), Nunito, sans-serif" }}
+              >
+                <span className="text-brand">SS </span>
+                <span className="text-ink">Babysitter</span>
+              </span>
+            </LogoSwap>
           </Link>
 
           {/* Desktop nav links — hidden on mobile */}

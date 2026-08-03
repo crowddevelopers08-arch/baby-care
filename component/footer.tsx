@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import EnquiryPopupButton from "./EnquiryPopupButton";
+import LogoSwap from "./LogoSwap";
 
 const scheduleItems = [
   { day: "Monday", time: "7am to 8pm", closed: false },
@@ -59,7 +60,7 @@ export default function BabyCareFooter() {
 
           {/* ── Col 1: Brand + Newsletter ── */}
           <div className="flex max-w-xs flex-col items-start gap-5 max-sm:gap-2">
-            <div className="flex items-center gap-3">
+            <LogoSwap secondaryClassName="rounded-2xl">
               {/* white chip — the logo is cyan/purple and would not read on azure */}
               <span className="inline-flex items-center justify-center rounded-2xl bg-white p-2">
                 <Image
@@ -73,7 +74,7 @@ export default function BabyCareFooter() {
               <h2 className="text-2xl font-extrabold leading-none text-white sm:text-3xl">
                 SS Babysitter
               </h2>
-            </div>
+            </LogoSwap>
             <p className="text-white/85 text-sm leading-relaxed">
               There cursus massa at urnaaculis estieSed aliquamellus vitae ultrs condmentum leo massamollis its estiegittis miristum.
             </p>
