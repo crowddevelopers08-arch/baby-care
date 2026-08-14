@@ -7,7 +7,7 @@ export const metadata = {
 
 const policySections = [
   {
-    title: "Information We Collect",
+    title: "Informations We Collect",
     body: "When you contact BabyCare, we may collect your name, phone number, email address, location, child care requirements, preferred shift timing, and any message you choose to share with us.",
   },
   {
