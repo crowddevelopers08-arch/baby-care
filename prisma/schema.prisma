@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  CLOSED
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  name    String
+  email   String?
+  phone   String
+  concern String
+  source  String  @default("Website")
+  pageUrl String?
+
+  status LeadStatus @default(NEW)
+  notes  String?
+
+  // Mirrors the outcome of the TeleCRM push so the dashboard can show sync state.
+  telecrmStatus String?
+  telecrmSynced Boolean @default(false)
+
+  @@index([createdAt])
+  @@index([status])
+  @@index([phone])
+}

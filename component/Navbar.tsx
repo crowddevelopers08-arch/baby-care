@@ -106,6 +106,11 @@ export default function Navbar() {
     return <SimpleNavbar />;
   }
 
+  // The leads dashboard is an internal tool and brings its own chrome.
+  if (pathname?.startsWith("/dashboard")) {
+    return null;
+  }
+
   return (
     <header className="w-full bg-white">
 

@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
 
+import { prisma } from '@/lib/prisma';
+
 const DATA_DIR = path.join(process.cwd(), 'data');
 const FILE_PATH = path.join(DATA_DIR, 'submissions.csv');
 const HEADERS = [
@@ -217,6 +219,26 @@ async function pushToTeleCRM(body: SubmissionBody): Promise<TelecrmResponse | nu
   }
 }
 
+async function saveLeadToDb(
+  body: SubmissionBody,
+  telecrmResult: TelecrmResponse | null,
+  telecrmStatus: string,
+) {
+  return prisma.lead.create({
+    data: {
+      name: body.name,
+      email: body.email || null,
+      phone: body.phone,
+      concern: body.concern,
+      source: body.source,
+      pageUrl: body.pageUrl || null,
+      telecrmStatus,
+      telecrmSynced: Boolean(telecrmResult?.synced),
+    },
+    select: { id: true },
+  });
+}
+
 function getTelecrmStatus(result: TelecrmResponse | null) {
   if (!result) return 'Not configured';
   if (result.synced) return `Synced${result.leadId ? ` (${String(result.leadId)})` : ''}`;
@@ -249,6 +271,20 @@ export async function POST(req: NextRequest) {
       telecrmStatus,
     ];
 
+    let dbStatus = 'saved';
+    let dbError = '';
+    let leadId: string | null = null;
+    try {
+      const lead = await saveLeadToDb(body, telecrmResult, telecrmStatus);
+      leadId = lead.id;
+    } catch (dbErr) {
+      dbStatus = 'failed';
+      dbError = (dbErr as Error).message;
+      // The lead is still mirrored to CSV / Sheets / TeleCRM below, so a database
+      // outage must never cost us the submission or break the form for the user.
+      console.error('Neon lead save failed:', dbError);
+    }
+
     try {
       appendLocalRow(row);
     } catch (csvErr) {
@@ -267,6 +303,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
+      leadId,
+      database: dbStatus,
+      databaseError: dbError,
       excel: excelStatus,
       excelError,
       telecrm: telecrmResult,

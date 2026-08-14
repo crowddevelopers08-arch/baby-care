@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import SupportFlowSection from "./SupportFlowSection";
 
 const needsRows = [
   [
@@ -84,8 +83,6 @@ export default function SpecialNeedsSection() {
             difficult. This is why the Babysits for Special Needs programme exists - for parents
             who are looking for the right attention and specialised care for their child.
           </p>
-
-          <SupportFlowSection />
 
           <div className="mt-10 max-sm:mt-5 rounded-[28px] border border-mist bg-white/90 p-6 shadow-[0_20px_60px_rgba(219,48,86,0.08)] md:p-8">
             <h3
