@@ -28,7 +28,7 @@ export default function LogoSwap({
         {/* object-cover trims the PNG's generous top/bottom whitespace so the
             wordmark reads at the same height as the lockup it replaces */}
         <Image
-          src="/ssanotherlogo.png"
+          src="https://res.cloudinary.com/xykwtyr0/image/upload/v1789712670/ssanotherlogo.png"
           alt=""
           fill
           sizes={sizes}

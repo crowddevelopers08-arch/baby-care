@@ -62,8 +62,7 @@ function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {
           <div
             className="h-full w-full rounded-full bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=180&h=180&fit=crop&crop=faces&q=90')",
+              backgroundImage: "url('https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/testimonial-avatar.jpg')",
             }}
           />
         </div>
@@ -116,7 +115,7 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="relative w-full overflow-hidden py-8 md:py-14">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/about-bg.jpg')" }}
+        style={{ backgroundImage: "url('https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/about-bg.jpg')" }}
         aria-hidden="true"
       />
       <div

@@ -11,7 +11,7 @@ export default function HeroSection() {
       className="relative w-full overflow-hidden"
       style={{
         minHeight: "clamp(420px, 80vh, 720px)",
-        backgroundImage: "url('/hero-img.jpg')",
+        backgroundImage: "url('https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/hero-img.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center right",
         backgroundRepeat: "no-repeat",

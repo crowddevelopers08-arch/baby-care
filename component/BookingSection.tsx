@@ -31,7 +31,7 @@ export default function BookingSection() {
       <div className="relative overflow-hidden px-6 py-8 md:py-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/about-bg.jpg')" }}
+          style={{ backgroundImage: "url('https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/about-bg.jpg')" }}
           aria-hidden="true"
         />
         <div

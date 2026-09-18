@@ -18,7 +18,7 @@ const ageGroups = [
     from: "var(--color-azure)",
     to: "var(--color-aqua)",
     offset: "lg:mt-0",
-    image: "https://images.unsplash.com/photo-1552819289-e14fbbcea868?w=600&h=300&fit=crop&q=80",
+    image: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/age-newborn.jpg",
     items: [
       "Breastfeeding Support",
       "Keeping the baby clean",
@@ -33,7 +33,7 @@ const ageGroups = [
     from: "var(--color-aqua)",
     to: "var(--color-leaf)",
     offset: "lg:mt-14",
-    image: "https://images.unsplash.com/photo-1503284116362-30c49f508156?w=600&h=300&fit=crop&q=80",
+    image: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/age-3-6-months.jpg",
     items: [
       "Keeping the play area clean",
       "Engaging with the baby",
@@ -47,7 +47,7 @@ const ageGroups = [
     from: "var(--color-sun)",
     to: "var(--color-brand)",
     offset: "lg:mt-0",
-    image: "https://images.unsplash.com/photo-1758698856229-6f3dfd08fcc7?w=600&h=300&fit=crop&q=80",
+    image: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/age-6-12-months.jpg",
     items: [
       "Speaking a lot with the baby",
       "Engaging with the baby",
@@ -63,7 +63,7 @@ const ageGroups = [
     from: "var(--color-brand)",
     to: "var(--color-brand-soft)",
     offset: "lg:mt-14",
-    image: "https://images.unsplash.com/photo-1578349035260-9f3d4042f1f7?w=600&h=300&fit=crop&q=80",
+    image: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/age-12-plus.jpg",
     items: [
       "Teaching to rearrange toys after playing",
       "Teaching personal hygiene",

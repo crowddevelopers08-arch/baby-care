@@ -36,7 +36,7 @@ export default function AboutSection() {
     <section id="about" className="relative w-full overflow-hidden py-8 md:py-14">
       {/* background image */}
       <Image
-        src="/about-bg.jpg"
+        src="https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/about-bg.jpg"
         alt=""
         fill
         className="object-cover object-center"

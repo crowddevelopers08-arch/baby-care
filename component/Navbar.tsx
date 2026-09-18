@@ -162,7 +162,7 @@ export default function Navbar() {
           <Link href="/" className="flex flex-shrink-0 items-center">
             <LogoSwap>
               <Image
-                src="/ss-logo.png"
+                src="https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/ss-logo.png"
                 alt="SS Babysitter"
                 width={72}
                 height={48}

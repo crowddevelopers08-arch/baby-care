@@ -4,10 +4,10 @@ import React from "react";
 import EnquiryPopupButton from "./EnquiryPopupButton";
 
 const featureCards = [
-  { title: "MULTILINGUAL", accent: "var(--color-brand)", icon: "/languages.png" },
-  { title: "TRUST", accent: "var(--color-azure)", icon: "/reliability.png" },
-  { title: "AFFORDABLE", accent: "var(--color-sun)", icon: "/money.png" },
-  { title: "GUARANTEE", accent: "var(--color-aqua)", icon: "/guarantee-1.png" },
+  { title: "MULTILINGUAL", accent: "var(--color-brand)", icon: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/languages.png" },
+  { title: "TRUST", accent: "var(--color-azure)", icon: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/reliability.png" },
+  { title: "AFFORDABLE", accent: "var(--color-sun)", icon: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/money.png" },
+  { title: "GUARANTEE", accent: "var(--color-aqua)", icon: "https://res.cloudinary.com/xykwtyr0/image/upload/v1789712667/guarantee-1.png" },
 ];
 
 const shiftCards = ["10 hrs", "12 hrs", "Night Shift", "Double Shift"];

@@ -64,7 +64,7 @@ export default function BabyCareFooter() {
               {/* white chip — the logo is cyan/purple and would not read on azure */}
               <span className="inline-flex items-center justify-center rounded-2xl bg-white p-2">
                 <Image
-                  src="/ss-logo.png"
+                  src="https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/ss-logo.png"
                   alt="SS Babysitter"
                   width={72}
                   height={48}

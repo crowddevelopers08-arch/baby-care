@@ -99,7 +99,7 @@ export default function EnquiryPopupButton({
         </button>
 
         <div className="relative min-h-[115px] overflow-hidden sm:min-h-[145px] md:min-h-[360px]">
-          <img src="/hero-img.jpg" alt="Baby care service" className="h-full w-full object-cover" />
+          <img src="https://res.cloudinary.com/xykwtyr0/image/upload/v1789712668/hero-img.jpg" alt="Baby care service" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
           <div className="absolute bottom-4 left-4 right-14 text-white md:bottom-8 md:left-8 md:right-8">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-white md:text-sm md:tracking-[0.18em]">BabyCare</p>
