@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 import SimpleFooter from "@/component/SimpleFooter";
 
 export const metadata = {
@@ -9,6 +10,15 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <main className="flex-1 bg-white">
+      {/* Google Ads Conversion Event Snippet */}
+      <Script id="google-ads-conversion" strategy="afterInteractive">
+        {`
+          gtag('event', 'conversion', {
+            'send_to': 'AW-11036071324/0352CIjkyoYYEJyrtI4p'
+          });
+        `}
+      </Script>
+
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#ffffff_70%)] px-6 py-20 md:px-12 md:py-16.5">
         <div className="pointer-events-none absolute -left-28 top-16 h-72 w-72 rounded-full border-[32px] border-line" />
         <div className="pointer-events-none absolute -right-24 bottom-10 h-64 w-64 rounded-full bg-cream" />
