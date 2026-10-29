@@ -174,6 +174,7 @@ export default function BabyCareFooter() {
       <div className="fixed bottom-0 left-0 right-0 z-50 flex w-full overflow-hidden rounded-t-xl border-t border-line backdrop-blur-sm md:hidden">
         <a
           href="tel:+919884502033"
+          onClick={() => (window as unknown as { gtag_report_conversion?: (url?: string) => boolean }).gtag_report_conversion?.("tel:+919884502033")}
           className="flex flex-1 items-center justify-center gap-2 bg-leaf py-4 text-base font-bold text-white transition-all duration-300 hover:bg-aqua active:translate-y-px"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">

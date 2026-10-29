@@ -76,6 +76,34 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Ads call conversion snippet - Call (9884502033) */}
+        <Script id="google-ads-call-conversion" strategy="afterInteractive">
+          {`
+            gtag('config', 'AW-11036071324/tuHvCL3Jjq4dEJyrtI4p', {
+              'phone_conversion_number': '9884502033'
+            });
+          `}
+        </Script>
+
+        {/* Google Ads click-to-call conversion snippet */}
+        <Script id="google-ads-click-to-call" strategy="afterInteractive">
+          {`
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-11036071324/5S8ACLjKjq4dEJyrtI4p',
+                'event_callback': callback
+              });
+              return false;
+            }
+            window.gtag_report_conversion = gtag_report_conversion;
+          `}
+        </Script>
+
         <Navbar />
         {children}
         <WhatsAppButton />
